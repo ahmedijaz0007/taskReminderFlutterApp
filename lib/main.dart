@@ -9,7 +9,7 @@ import 'constants/app_colors.dart';
 
 
 
-Future<void> main() async {
+void main()  {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Than we setup preferred orientations,

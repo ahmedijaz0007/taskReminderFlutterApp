@@ -1,31 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'home_screen.dart';
-import 'details_screen.dart';
-import 'profile_screen.dart';
+import 'package:task_reminder_updated/root/History/screens/history_screen.dart';
+import 'package:task_reminder_updated/root/home/screens/nav_screen.dart';
+import '../root/home/screens/home_screen.dart';
+
 
 abstract class AppRouter {
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(
-        name: 'home',
+        name: 'nav',
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return HomeScreen();
+          return const NavScreen();
         },
       ),
       GoRoute(
-        name: 'details',
-        path: '/details',
+        name: 'home',
+        path: '/home',
         builder: (BuildContext context, GoRouterState state) {
-          return DetailsScreen();
+          return const HomeScreen();
         },
       ),
       GoRoute(
-        name: 'profile',
-        path: '/profile',
+        name: 'history',
+        path: '/history',
         builder: (BuildContext context, GoRouterState state) {
-          return ProfileScreen();
+          return const HistoryScreen();
+        },
+      ),
+      GoRoute(
+        name: 'add_task',
+        path: '/addTask',
+        builder: (BuildContext context, GoRouterState state) {
+          return const HomeScreen();
         },
       ),
     ],
