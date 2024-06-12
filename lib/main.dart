@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_reminder_updated/root/theme/theme_cubit.dart';
+import 'package:task_reminder_updated/routes/routes.dart';
 
 import 'cache/cache_manager.dart';
 import 'constants/app_colors.dart';
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
                 brightness: Brightness.dark,
                 colorSchemeSeed: AppColors.primaryColor), //theme.toThemeData(Brightness.dark),
              themeMode: state.themeMode,
-            routerConfig: _appRouter.config(),
+            routerConfig: AppRouter.router,
           );
         },
       ),

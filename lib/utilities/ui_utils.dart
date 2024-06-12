@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:foodpanda/cache/cache_manager.dart';
 
 import '../../constants/app_colors.dart';
+import '../cache/cache_manager.dart';
 import '../constants/icon_constants.dart';
 
 abstract class UiUtils {

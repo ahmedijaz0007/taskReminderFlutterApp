@@ -4,7 +4,7 @@ import 'home_screen.dart';
 import 'details_screen.dart';
 import 'profile_screen.dart';
 
-class AppRouter {
+abstract class AppRouter {
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(
