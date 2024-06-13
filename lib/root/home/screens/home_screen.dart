@@ -14,18 +14,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen>{
-  final tasks = [Task(id: '', title: '', description: ''),Task(id: '', title: '', description: '')];
+  final tasks = [Task(id: '1', title: 'HAHAH', description: 'DASDASDASD'),Task(id: '2', title: 'ADSVSDSD', description: 'DASDASD')];
   @override
   Widget build(BuildContext context) {
      return  SafeArea(
-       child: Column(
-         children: [
-           TaskList(tasks: tasks, type: 'In Progress',),
-           const SizedBox(height: 7,),
-           TaskList(tasks: tasks, type: 'In Progress',),
-           const SizedBox(height: 7,),
-           TaskList(tasks: tasks, type: 'In Progress',),
-         ],
+       child: SingleChildScrollView(
+         child: Column(
+           children: [
+             TaskList(tasks: tasks, type: 'In Progress',),
+             const SizedBox(height: 7,),
+             TaskList(tasks: tasks, type: 'To Do',),
+             const SizedBox(height: 7,),
+             TaskList(tasks: tasks, type: 'Done',),
+           ],
+         ),
        ),
      );
   }

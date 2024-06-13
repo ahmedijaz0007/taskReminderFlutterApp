@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:task_reminder_updated/constants/app_colors.dart';
 import 'package:task_reminder_updated/utilities/ui_utils.dart';
 
@@ -39,17 +40,26 @@ class TaskList extends StatelessWidget{
                scrollDirection: Axis.horizontal,
                  itemCount: tasks.length,
                  itemBuilder: (context,index){
-               return SizedBox(
-                 width: UiUtils.getDeviceBasedWidth(250),
-                 child:  Card(
-                   color: AppColors.secondaryColor,
-                   child: Column(
-                     children: [
-                       Text(tasks[index].title,maxLines: 1,softWrap: true,overflow: TextOverflow.fade),
-                       const SizedBox(height: 5,),
-                       Text(tasks[index].description,maxLines: 2,softWrap: true,overflow: TextOverflow.fade,),
-                     ],
-                   )
+               return InkWell(
+                 onTap: (){
+                   context.goNamed('song', pathParameters: {'id': tasks[index].id ?? "" });
+                 },
+                 child: SizedBox(
+                   key: ValueKey(tasks[index].id),
+                   width: UiUtils.getDeviceBasedWidth(250),
+                   child:  Card(
+                     color: AppColors.secondaryColor,
+                     child: Padding(
+                       padding: const EdgeInsets.all(8.0),
+                       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(tasks[index].title ?? "",maxLines: 1,softWrap: true,overflow: TextOverflow.fade),
+                           const SizedBox(height: 5,),
+                           Text(tasks[index].description ?? "",maxLines: 2,softWrap: true,overflow: TextOverflow.fade),
+                         ],
+                       ),
+                     )
+                   ),
                  ),
                );
              }),

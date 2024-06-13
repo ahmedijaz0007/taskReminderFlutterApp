@@ -1,17 +1,17 @@
 import 'package:equatable/equatable.dart';
 
 class Task {
-  String id;
+  String? id;
 
-  String title;
+  String? title;
 
-  String description;
+  String? description;
 
-  String status; // 'To Do', 'In Progress', 'Done'
+  String? status; // 'To Do', 'In Progress', 'Done'
 
-  Duration timeSpent;
+  Duration? timeSpent;
 
-  List<String> comments;
+  List<String>? comments;
 
   DateTime? completedDate;
 

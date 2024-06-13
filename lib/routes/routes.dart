@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_reminder_updated/root/History/screens/history_screen.dart';
 import 'package:task_reminder_updated/root/home/screens/nav_screen.dart';
+import '../root/details/screen/task_details_screen.dart';
 import '../root/home/screens/home_screen.dart';
 
 
@@ -34,6 +35,13 @@ abstract class AppRouter {
         path: '/addTask',
         builder: (BuildContext context, GoRouterState state) {
           return const HomeScreen();
+        },
+      ),
+      GoRoute(
+        name: 'details',
+        path: '/details',
+        builder: (BuildContext context, GoRouterState state) {
+          return const DetailScreen();
         },
       ),
     ],
