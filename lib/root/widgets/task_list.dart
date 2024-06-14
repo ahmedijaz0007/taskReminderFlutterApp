@@ -42,7 +42,7 @@ class TaskList extends StatelessWidget{
                  itemBuilder: (context,index){
                return InkWell(
                  onTap: (){
-                   context.goNamed('song', pathParameters: {'id': tasks[index].id ?? "" });
+                   context.pushNamed("details");
                  },
                  child: SizedBox(
                    key: ValueKey(tasks[index].id),
