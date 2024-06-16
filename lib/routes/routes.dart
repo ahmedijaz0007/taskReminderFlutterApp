@@ -41,7 +41,8 @@ abstract class AppRouter {
         name: 'details',
         path: '/details',
         builder: (BuildContext context, GoRouterState state) {
-          return const DetailScreen();
+             return const NavScreen();
+          //return  DetailScreen(task: Tas,);
         },
       ),
     ],
