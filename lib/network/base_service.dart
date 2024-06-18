@@ -22,7 +22,7 @@ class BaseServices {
       print("req is $url");
       Map<String, String> headers = {
         'Content-Type': 'application/json',
-        // 'Authorization': 'Bearer ${CacheManager().apiToken}'
+         'Authorization': 'Bearer $apiToken'
       };
       http.Response? response;
       switch (httpType) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:task_reminder_updated/constants/app_colors.dart';
 import 'package:task_reminder_updated/root/details/screen/task_details_screen.dart';
 import 'package:task_reminder_updated/utilities/ui_utils.dart';
@@ -68,7 +67,7 @@ class TaskList extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(tasks[index].title ?? "",
+                                  Text(tasks[index].content ?? "",
                                       maxLines: 1,
                                       softWrap: true,
                                       overflow: TextOverflow.fade),

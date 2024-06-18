@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_reminder_updated/root/History/screens/history_screen.dart';
 import 'package:task_reminder_updated/root/home/screens/nav_screen.dart';
-import '../root/details/screen/task_details_screen.dart';
+import 'package:task_reminder_updated/root/home/screens/splash_screen.dart';
 import '../root/home/screens/home_screen.dart';
 
 
@@ -10,10 +10,17 @@ abstract class AppRouter {
   static final GoRouter router = GoRouter(
     routes: [
       GoRoute(
-        name: 'nav',
+        name: 'splash',
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const NavScreen();
+          return  SplashScreen();
+        },
+      ),
+      GoRoute(
+        name: 'nav',
+        path: '/nav',
+        builder: (BuildContext context, GoRouterState state) {
+          return  const NavScreen();
         },
       ),
       GoRoute(

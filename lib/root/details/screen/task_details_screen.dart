@@ -121,7 +121,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(myTask.title ?? ""),
+                            Text(myTask.content ?? ""),
                             const SizedBox(
                               height: 2,
                             ),

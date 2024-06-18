@@ -1,30 +1,46 @@
 
+
 class Task {
-  String? id;
 
-  String? title;
-
+  bool? isCompleted;
+  String? content;
   String? description;
-
-  String? status; // 'To Do', 'In Progress', 'Done'
-
-  Duration? timeSpent;
+  String? duration;
+  String? id;
 
   List<String>? comments;
 
-  DateTime? completedDate;
 
-  bool isOngoing = false;
-  DateTime? startTime;
 
-  Task({
-    required this.id,
-    required this.title,
-    required this.description,
-    this.status = 'To Do',
-    this.timeSpent = Duration.zero,
-    this.comments = const [],
-    this.completedDate,
-  });
+  factory Task.fromJson(Map<String, dynamic> json) {
+   return Task(
+       isCompleted: json['is_completed'],
+       content : json['content'],
+       description : json['description'],
+       duration : json['duration'],
+       id : json['id'],);
+
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data =  <String, dynamic>{};
+    data['is_completed'] = isCompleted;
+    data['content'] = content;
+    data['description'] = description;
+
+    data['duration'] = duration;
+    data['id'] = id;
+
+    return data;
+  }
+
+Task({
+   this.id,
+   this.description,
+   this.content,
+   this.duration,
+   this.isCompleted,
+   this.comments
+});
 
 }

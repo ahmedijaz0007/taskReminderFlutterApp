@@ -20,5 +20,6 @@ class CacheManager {
   var themeMode = ThemeMode.light;
   var  screenWidth = 372.0;  //iphoneX's width
   var  screenHeight = 812.0; //iphoneX's height
+
 }
 
